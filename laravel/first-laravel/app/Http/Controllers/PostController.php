@@ -11,7 +11,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        return "this is index posts";
+        $post = (object) [
+            "id" => '1',
+            'title' => 'Post 1',
+            'body' => 'This is post 1 body'
+        ];
+        $posts = array_fill(0, 10, $post);
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -35,7 +41,12 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $post = (object) [
+            "id" => '1',
+            'title' => 'Post 1',
+            'body' => 'This is post 1 body'
+        ];
+        return view('posts.show', compact('post'));
     }
 
     /**

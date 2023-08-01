@@ -3,7 +3,9 @@
 @section('title', 'Login')
 
 @section('content')
-    <form>
-        <input type="text" name="email" placeholder="Email">
-    </form>
+    <x-card>
+        <form>
+            <input type="text" name="email" placeholder="Email">
+        </form>
+    </x-card>
 @endsection
