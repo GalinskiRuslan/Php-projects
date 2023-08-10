@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+
 
 class LoginController extends Controller
 {
@@ -26,11 +29,11 @@ class LoginController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         //
-        response()->json($request->all());
-        return redirect()->route('/');
+        /*  response()->json($request->all()); */
+        return Redirect::route('login.index');
     }
 
     /**

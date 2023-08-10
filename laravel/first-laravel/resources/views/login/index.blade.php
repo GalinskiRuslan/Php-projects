@@ -25,7 +25,7 @@
                                 <button class="btn btn-primary" type="submit">{{ __('Войти') }}</button>
                             </form>
                         </div>
-
+                        <x-forms.input />
                     </x-card>
                 </div>
             </div>
