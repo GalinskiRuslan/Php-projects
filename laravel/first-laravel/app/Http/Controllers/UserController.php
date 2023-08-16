@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 
-
-class LoginController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
-        return view('login.index');
+        return view('user.index');
     }
 
     /**
@@ -23,7 +19,7 @@ class LoginController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.create');
     }
 
     /**
@@ -32,8 +28,6 @@ class LoginController extends Controller
     public function store(Request $request)
     {
         //
-        /*  response()->json($request->all()); */
-        return 'This is login@!!';
     }
 
     /**
@@ -41,7 +35,7 @@ class LoginController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view("user.show");
     }
 
     /**
@@ -49,7 +43,7 @@ class LoginController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('user.edit');
     }
 
     /**

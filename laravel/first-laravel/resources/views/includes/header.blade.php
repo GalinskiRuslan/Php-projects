@@ -19,20 +19,22 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
+                        <a class="nav-link {{ Route::is('home') ? 'active' : '' }}" aria-current="page"
                             href="{{ route('home') }}">{{ __('Главная') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('posts.index') }}" class="nav-link">{{ __('Посты') }}</a>
+                        <a href="{{ route('posts.index') }}"
+                            class="nav-link {{ Route::is('posts.*') ? 'active' : '' }}">{{ __('Посты') }}</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page"
+                        <a class="nav-link {{ Route::is('login.*') ? 'active' : '' }}" aria-current="page"
                             href="{{ route('login.index') }}">{{ __('Вход') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('register.index') }}" class="nav-link">{{ __('Регистрация') }}</a>
+                        <a href="{{ route('register.index') }}"
+                            class="nav-link {{ Route::is('register.*') ? 'active' : '' }}">{{ __('Регистрация') }}</a>
                     </li>
                 </ul>
             </div>

@@ -14,7 +14,7 @@ Route::view('/', 'home.index')->name('home');
 Route::resource('/register', RegisterController::class);
 
 
-
+Route::resource('user', RegisterController::class);
 // Посты 
 
 Route::resource('/posts', PostController::class);

@@ -6,7 +6,7 @@
 
 
     <div>
-
+        <x-button-link href="{{ route('posts.edit', $post->id) }}">Редактировать!</x-button-link>
 
         <h1>{{ $post->title }}</h1>
 

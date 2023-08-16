@@ -1,4 +1,1 @@
-<div>
-    <!-- The biggest battle is the war against ignorance. - Mustafa Kemal Atatürk -->
-    This is input
-</div>
+<input {{ $attributes->class(['form-control mb-2'])->merge(['type' => 'text']) }} />

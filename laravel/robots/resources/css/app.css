@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+p {
+    font-family: Inter;
+}
 .header-guest {
     background-color: #fff;
     padding: 16px 0;
@@ -38,9 +41,6 @@
     align-items: center;
     gap: 25px;
 }
-/* .guest-main {
-    min-height: 90vh;
-} */
 .login-form {
     max-width: 400px;
     padding: 20px;
@@ -50,13 +50,206 @@
     margin-top: 120px;
 }
 .container {
-    max-width: 1040px;
+    max-width: 1140px;
     margin: 0 auto;
 }
 .first-section {
-    max-width: 1440px;
+    max-width: 1920px;
     margin: 0 auto;
     background: url("./assets/img/image 95.png") no-repeat;
     background-size: cover;
     min-height: 600px;
+}
+.text-title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 45px;
+    line-height: normal;
+}
+.btn-red {
+    border-radius: 24px;
+    background: #9a0416;
+    padding: 10px 32px 9px 32px;
+    color: #fff;
+    margin-top: 26px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.btn-red:hover {
+    background: #200609;
+    transition: 0.8s;
+}
+
+/*      Вторая секция                */
+
+.second-section {
+    margin: 100px 0;
+}
+
+.card {
+    width: 360px;
+    height: 482px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+}
+.card-body {
+    width: 360px;
+    height: 482px;
+    border-radius: 24px;
+    opacity: 0.9;
+    background: var(--unnamed, #f5f5f5);
+    transform: translateY(370px);
+    position: absolute;
+    top: 0;
+    transition: 1s;
+    padding: 32px 24px;
+}
+.card:hover .card-body {
+    transform: translateY(0px);
+    transition: 1s;
+}
+.card-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+.subtitle {
+    font-size: 16px;
+    font-weight: 400;
+}
+.card-description {
+    font-size: 16px;
+    line-height: 140.023%;
+    font-weight: 400;
+    margin-top: 90px;
+}
+.card-list {
+    margin-top: 90px;
+    list-style-type: disc;
+    margin-left: 24px;
+}
+.card-button {
+    border-radius: 24px;
+    background: inherit;
+    border: 1px solid #212121;
+    transition: 0.8s;
+    padding: 10px 32px 9px 32px;
+    color: #212121;
+    margin-top: 40px;
+}
+.card-button:hover {
+    background: #212121;
+    color: #fff;
+    transition: 0.8s;
+}
+.card-center-cont {
+    text-align: center;
+}
+.card-cont {
+    display: flex;
+    justify-content: space-between;
+}
+.microcontrsvg .backrect {
+    transition: 0.7s;
+}
+.microcontrsvg:hover .backrect {
+    x: 10;
+    y: 10;
+    transition: 0.7s;
+}
+.microcontrsvg .backrect2 {
+    transition: 0.7s;
+}
+.microcontrsvg:hover .backrect2 {
+    x: 10;
+    y: 10;
+    transition: 0.7s;
+}
+.microcontrsvg:hover .frontrect {
+    x: 40;
+    y: 40;
+    transition: 0.7s;
+}
+.microcontrsvg:hover .frontrect2 {
+    x: 40;
+    y: 40;
+    transition: 0.7s;
+}
+.microcontrsvg .frontrect {
+    transition: 0.7s;
+}
+.microcontrsvg .frontrect2 {
+    transition: 0.7s;
+}
+
+.microcontrsvg:hover .innerimg {
+    x: 76;
+    y: 65;
+    transition: 0.7s;
+}
+.microcontrsvg:hover .innerimg2 {
+    x: 110;
+    y: 70;
+    transition: 0.7s;
+}
+.microcontrsvg:hover .innerimg3 {
+    x: 70;
+    y: 85;
+    transition: 0.7s;
+}
+.microcontrsvg:hover .innerimg4 {
+    x: 95;
+    y: 104;
+    transition: 0.7s;
+}
+.microcontrsvg:hover .innerimg5 {
+    x: 100;
+    y: 85;
+    transition: 0.7s;
+}
+.microcontrsvg .innerimg {
+    transition: 0.7s;
+}
+.microcontrsvg .innerimg2 {
+    transition: 0.7s;
+}
+.microcontrsvg .innerimg3 {
+    transition: 0.7s;
+}
+.microcontrsvg .innerimg4 {
+    transition: 0.7s;
+}
+.microcontrsvg .innerimg5 {
+    transition: 0.7s;
+}
+.secsvg {
+    position: relative;
+}
+.whiteSVG {
+    position: absolute;
+    top: 36%;
+    left: 50px;
+}
+.secsvg:hover .whiteSVG {
+    transform: rotate(180deg);
+    transition: 0.7s;
+}
+.secsvg .whiteSVG {
+    transition: 0.7s;
+}
+.secondsvg:hover {
+    transform: scale(1.3);
+    transition: 0.7s;
+}
+.secondsvg {
+    transition: 0.7s;
+}
+
+@media screen and (max-width: 920px) {
+    .first-section {
+        background-position: 40%;
+    }
+    .container {
+        padding: 0 30px;
+    }
 }

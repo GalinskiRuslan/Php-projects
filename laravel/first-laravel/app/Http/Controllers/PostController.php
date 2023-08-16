@@ -25,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return "this is create posts";
+        return view('posts.create');
     }
 
     /**
@@ -52,9 +52,15 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $post)
     {
-        //
+
+        $post = (object) [
+            "id" => '1',
+            'title' => 'Post 1',
+            'body' => 'This is post 1 body'
+        ];
+        return view('posts.edit', compact('post'));
     }
 
     /**
