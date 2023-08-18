@@ -9,14 +9,31 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $search = $request->input('search');
+        $category = $request->input('category');
+
+
         $post = (object) [
             "id" => '1',
             'title' => 'Post 1',
-            'body' => 'This is post 1 body'
+            'body' => 'This is post 1 body',
+            'category_id' => '1'
         ];
         $posts = array_fill(0, 10, $post);
+        $posts = array_filter($posts, function ($post) use ($search, $category) {
+            if ($search && !str_contains(strtolower($post->title), strtolower($search))) {
+
+                return false;
+            }
+            if ($category && $post->category_id !== $category) {
+
+                return false;
+            }
+
+            return true;
+        });
         return view('posts.index', compact('posts'));
     }
 
@@ -34,6 +51,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        dd($request->all());
     }
 
     /**

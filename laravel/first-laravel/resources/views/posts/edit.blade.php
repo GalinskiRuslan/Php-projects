@@ -5,16 +5,16 @@
 
 @section('content')
     <div class="container">
-        <h2> Изменение поста</h2>
-        <form>
+        <x-form header_form="Изменение поста" form_action="{{ route('register.index') }}" form_method="put">
+
             <x-label required>Название поста</x-label><br />
-            <input type="text" name="title" value={{ $post->title }}><br /><br /><br />
+            <input type="text" name="title" value='{{ $post->title }}'><br /><br /><br />
             <x-label required>Текст поста</x-label><br />
-            <input id="x" type="hidden" name="content" value={{ $post->body }}>
+            <input id="x" type="hidden" name="content" value='{{ $post->body }}'>
             <trix-editor input="x"></trix-editor><br />
             <x-forms.button type="submit">Изменить</x-forms.button>
 
-        </form>
+        </x-form>
     </div>
     @push('css')
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">

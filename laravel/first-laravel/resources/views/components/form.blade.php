@@ -1,5 +1,8 @@
-@props(['header_form', 'form_action', 'form_method', 'form_items'])
+@props(['header_form' => '', 'form_action', 'form_method' => 'GET', 'form_items'])
 
+@php($form_method = strtoupper($form_method))
+
+@php($_method = in_array($form_method, ['GET', 'POST']))
 <section>
     <div class="container">
         <div class="row">
@@ -9,8 +12,13 @@
                         <h4>{{ $header_form }}</h4>
                     </div>
                     <div class="card-body">
-                        <form action={{ $form_action }} method={{ $form_method }}>
-                            @csrf
+                        <form action={{ $form_action }} method={{ $_method ? $form_method : 'POST' }}>
+                            @unless ($_method)
+                                @method($form_method)
+                            @endunless
+                            @if ($form_method !== 'GET')
+                                @csrf
+                            @endif
                             {{ $slot }}
                         </form>
                     </div>
