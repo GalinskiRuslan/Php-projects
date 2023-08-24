@@ -50,8 +50,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        dd($request->all());
+        $validated = validator($request->all(), [
+            'title' => ['required', 'string', 'max:80'],
+            'body' => ['required', 'string', 'max:255'],
+        ])->validate();
+        dd($validated);
+        if (false) {
+            return redirect()->back()->withInput();
+        }
     }
 
     /**
